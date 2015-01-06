@@ -8,15 +8,15 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle;
+namespace AppBundle\Repository;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Doctrine\ORM\EntityRepository;
 
 /**
- * AppBundle
+ * AccountRepository
  *
  * @author Artem Genvald <genvaldartem@gmail.com>
  */
-class AppBundle extends Bundle
+class AccountRepository extends EntityRepository
 {
 }

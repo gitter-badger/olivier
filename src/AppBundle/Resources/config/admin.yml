@@ -1,0 +1,36 @@
+services:
+    admin.account:
+        class: AppBundle\Admin\AccountAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Financial", label: "Accounts" }
+        arguments:
+            - ~
+            - 'AppBundle\Entity\Account'
+            - ~
+
+    admin.operation:
+        class: AppBundle\Admin\OperationAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Financial", label: "Operations" }
+        arguments:
+            - ~
+            - 'AppBundle\Entity\Operation'
+            - ~
+
+    admin.tag:
+        class: AppBundle\Admin\TagAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Other", label: "Tags" }
+        arguments:
+            - ~
+            - 'AppBundle\Entity\Tag'
+            - ~
+
+    admin.place:
+        class: AppBundle\Admin\PlaceAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Other", label: "Places" }
+        arguments:
+            - ~
+            - 'AppBundle\Entity\Place'
+            - ~

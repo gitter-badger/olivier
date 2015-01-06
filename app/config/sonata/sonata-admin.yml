@@ -1,3 +1,3 @@
 sonata_admin:
-    title: Olivier Accounting
-#    title_logo: bundles/acmedemo/img/fancy_acme_logo.png
+    title: Olivier Admin
+    title_logo: images/money-jar-icon.png

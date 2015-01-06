@@ -1,7 +1,7 @@
 {
     "name": "fresh/olivier",
     "description": "Web-application for personal accounting.",
-    "keywords": ["accounting", "finance", "money"],
+    "keywords": ["accounting", "finance", "money", "olivier", "symfony"],
     "homepage": "https://github.com/fre5h/olivier",
     "type": "project",
     "license": "MIT",
@@ -17,7 +17,9 @@
         "issues": "https://github.com/fre5h/olivier/issues"
     },
     "require": {
-        "php": ">=5.3.3",
+        "php": ">=5.5.0",
+        "ext-intl": "*",
+        "ext-mbstring": "*",
         "symfony/symfony": "2.6.*",
         "doctrine/orm": "~2.2,>=2.2.3",
         "doctrine/doctrine-bundle": "~1.2",
@@ -25,13 +27,13 @@
         "symfony/assetic-bundle": "~2.3",
         "symfony/swiftmailer-bundle": "~2.3",
         "symfony/monolog-bundle": "~2.4",
-        "sensio/distribution-bundle": "~3.0",
+        "sensio/distribution-bundle": "~3.0.12",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
         "stof/doctrine-extensions-bundle": "~1.1@dev",
-        "doctrine/migrations": "dev-master",
-        "doctrine/doctrine-migrations-bundle": "dev-master",
+        "doctrine/migrations": "1.0.*@dev",
+        "doctrine/doctrine-migrations-bundle": "2.1.*@dev",
         "fresh/doctrine-enum-bundle": "dev-master",
         "fresh/timestampable-entity-bundle": "dev-master"
     },
@@ -70,12 +72,22 @@
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
-        "symfony-assets-install": "relative",
         "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
+            "file": "app/config/parameters.yml",
+            "env-map": {
+                "database_name": "SYMFONY__DATABASE_NAME",
+                "database_user": "SYMFONY__DATABASE_USER",
+                "database_host": "SYMFONY__DATABASE_HOST",
+                "database_password": "SYMFONY__DATABASE_PASSWORD"
+            }
         },
-        "branch-alias": {
-            "dev-master": "2.6-dev"
+        "heroku": {
+            "document-root": "web",
+            "php-config": [
+                "date.timezone=Europe/Kiev",
+                "display_errors=off",
+                "short_open_tag=off"
+            ]
         }
     }
 }

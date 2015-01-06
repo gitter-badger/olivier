@@ -33,9 +33,5 @@ monolog:
                 VERBOSITY_DEBUG: DEBUG
             channels: ["doctrine"]
 
-doctrine:
-    dbal:
-        dbname: "%database_name_development%"
-
 assetic:
     use_controller: true

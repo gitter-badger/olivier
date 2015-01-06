@@ -1,0 +1,20 @@
+{
+    "name": "Olivier",
+    "description": "Web-application for personal accounting.",
+    "keywords": ["accounting", "finance", "money", "olivier"],
+    "website": "https://github.com/fre5h/olivier",
+    "success_url": "/admin",
+    "repository": "https://github.com/fre5h/olivier",
+    "logo": "http://icons.iconarchive.com/icons/artdesigner/my-secret/128/money-jar-icon.png",
+    "addons": [
+        "cleardb"
+    ],
+    "env": {
+        "SYMFONY_ENV": {
+            "value": "prod"
+        }
+    },
+    "scripts": {
+        "postdeploy": "php app/console cache:clear --env=prod --no-debug; php app/console assetic:dump --env=prod --no-debug"
+    }
+}

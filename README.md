@@ -1,4 +1,4 @@
-olivier
+Olivier
 =======
 
-Small web-application for personal accounting
+Web-application for personal accounting.
